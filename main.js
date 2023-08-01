@@ -8,7 +8,10 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+	playerSelection = prompt("Rock, Paper or Scissors?");
 	playerSelectionUpperCase = playerSelection.toUpperCase()
+
+	computerSelection = getComputerChoice();
 
 	if (playerSelectionUpperCase === "ROCK" && computerSelection === "SCISSORS") {
 		return "You Win! Rock beats Scissors";
@@ -31,6 +34,13 @@ function playRound(playerSelection, computerSelection) {
 	} else return "Please check input"
 }
 
-const playerSelection = "scissors";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound());
+
+// function game() {
+// 	playerScore = 0
+// 	computerScore = 0
+
+// 	playRound(playerSelection, computerSelection)
+
+
+// }
