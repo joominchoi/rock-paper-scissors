@@ -8,50 +8,34 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-
-
 	playerSelection = prompt("Rock, Paper or Scissors?");
 	playerSelectionUpperCase = playerSelection.toUpperCase()
-
 	computerSelection = getComputerChoice();
-
-	if (playerSelectionUpperCase === "ROCK" && computerSelection === "SCISSORS") {
+	
+	if (
+		(playerSelectionUpperCase === "ROCK" && computerSelection === "SCISSORS") ||
+		(playerSelectionUpperCase === "PAPER" && computerSelection === "ROCK") ||
+		(playerSelectionUpperCase === "SCISSORS" && computerSelection === "PAPER")
+	) {
 		return "P Wins"
-	} else if (playerSelectionUpperCase === "PAPER" && computerSelection === "ROCK") {
-		return "P Wins"
-	} else if (playerSelectionUpperCase === "SCISSORS" && computerSelection === "PAPER") {
-		return "P Wins"
-	} else if (computerSelection === "ROCK" && playerSelectionUpperCase === "SCISSORS") {
+	} else if (
+		(computerSelection === "ROCK" && playerSelectionUpperCase === "SCISSORS") ||
+		(computerSelection === "PAPER" && playerSelectionUpperCase === "ROCK") ||
+		(computerSelection === "SCISSORS" && playerSelectionUpperCase === "PAPER")
+	) {
 		return "C Wins"
-	} else if (computerSelection === "PAPER" && playerSelectionUpperCase === "ROCK") {
-		return "C Wins"
-	} else if (computerSelection === "SCISSORS" && playerSelectionUpperCase === "PAPER") {
-		return "C Wins"
-	} else if (playerSelectionUpperCase === "ROCK" && computerSelection === "ROCK") {
-		return "Draw"
-	} else if (playerSelectionUpperCase === "PAPER" && computerSelection === "PAPER") {
-		return "Draw"
-	} else if (playerSelectionUpperCase === "SCISSORS" && computerSelection === "SCISSORS") {
+	} else if (
+		(playerSelectionUpperCase === "ROCK" && computerSelection === "ROCK") ||
+		(playerSelectionUpperCase === "PAPER" && computerSelection === "PAPER") ||
+		(playerSelectionUpperCase === "SCISSORS" && computerSelection === "SCISSORS")
+	) {
 		return "Draw"
 	} else console.log("Invalid move. Please check input.");
 }
 
-// console.log(playRound());
-
 function game() {
 	let playerScore = 0
 	let computerScore = 0
-
-	// playRound();
-	// if (playRound.playerWins === true) {
-	// 	playerScore++
-	// 	console.log("You Win! " + playRound.playerSelectionUpperCase + "beats " + playRound.computerSelection + ". Score is " + playerScore + ":" + computerScore);
-	// } else if (playRound.computerWins === true) {
-	// 	computerScore++
-	// 	console.log("You Lose! " + playRound.computerSelection + "beats " + playRound.playerSelectionUpperCase + ". Score is " + playerScore + ":" + computerScore);
-	// } else if (playRound.draw === true) {
-	// 	console.log("It's a Draw! You both drew " + playerSelectionUpperCase + ". Score is still " + playerScore + ":" + computerScore);
-	// }
 
 	let round1 = playRound()
 	if (round1 === "P Wins") {
