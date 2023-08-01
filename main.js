@@ -11,7 +11,7 @@ function playRound(playerSelection, computerSelection) {
 	playerSelection = prompt("Rock, Paper or Scissors?");
 	playerSelectionUpperCase = playerSelection.toUpperCase()
 	computerSelection = getComputerChoice();
-	
+
 	if (
 		(playerSelectionUpperCase === "ROCK" && computerSelection === "SCISSORS") ||
 		(playerSelectionUpperCase === "PAPER" && computerSelection === "ROCK") ||
@@ -24,11 +24,7 @@ function playRound(playerSelection, computerSelection) {
 		(computerSelection === "SCISSORS" && playerSelectionUpperCase === "PAPER")
 	) {
 		return "C Wins"
-	} else if (
-		(playerSelectionUpperCase === "ROCK" && computerSelection === "ROCK") ||
-		(playerSelectionUpperCase === "PAPER" && computerSelection === "PAPER") ||
-		(playerSelectionUpperCase === "SCISSORS" && computerSelection === "SCISSORS")
-	) {
+	} else if (playerSelectionUpperCase === computerSelection) {
 		return "Draw"
 	} else console.log("Invalid move. Please check input.");
 }
