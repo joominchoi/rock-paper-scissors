@@ -32,60 +32,21 @@ function playRound(playerSelection, computerSelection) {
 function game() {
 	let playerScore = 0
 	let computerScore = 0
+	let numberOfRounds = 5
 
-	let round1 = playRound()
-	if (round1 === "P Wins") {
-		playerScore++
-		console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round1 === "C Wins") {
-		computerScore++
-		console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round1 === "Draw") {
-		console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
-	}
+	while (numberOfRounds > 0) {
+		let currentRound = playRound()
+		if (currentRound === "P Wins") {
+			playerScore++
+			console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
+		} else if (currentRound === "C Wins") {
+			computerScore++
+			console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
+		} else if (currentRound === "Draw") {
+			console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
+		}
 
-	let round2 = playRound()
-	if (round2 === "P Wins") {
-		playerScore++
-		console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round2 === "C Wins") {
-		computerScore++
-		console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round2 === "Draw") {
-		console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
-	}
-
-	let round3 = playRound()
-	if (round3 === "P Wins") {
-		playerScore++
-		console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round3 === "C Wins") {
-		computerScore++
-		console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round3 === "Draw") {
-		console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
-	}
-
-	let round4 = playRound()
-	if (round4 === "P Wins") {
-		playerScore++
-		console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round4 === "C Wins") {
-		computerScore++
-		console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round4 === "Draw") {
-		console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
-	}
-
-	let round5 = playRound()
-	if (round5 === "P Wins") {
-		playerScore++
-		console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round1 === "C Wins") {
-		computerScore++
-		console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
-	} else if (round5 === "Draw") {
-		console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
+		numberOfRounds -= 1
 	}
 }
 
