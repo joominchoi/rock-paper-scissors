@@ -15,19 +15,16 @@ function playRound(playerSelection, computerSelection) {
 		(playerSelection === "PAPER" && computerSelection === "ROCK") ||
 		(playerSelection === "SCISSORS" && computerSelection === "PAPER")
 	) {
-		// return "P Wins"
-		console.log("P Wins")
+		results.textContent = "Player Wins"
 	} else if (
 		(computerSelection === "ROCK" && playerSelection === "SCISSORS") ||
 		(computerSelection === "PAPER" && playerSelection === "ROCK") ||
 		(computerSelection === "SCISSORS" && playerSelection === "PAPER")
 	) {
-		// return "C Wins"
-		console.log("C Wins")
+		results.textContent = "Computer Wins"
 	} else if (playerSelection === computerSelection) {
-		// return "Draw"
-		console.log("Draw")
-	} else console.log("Invalid move. Please check input.");
+		results.textContent = "Draw"
+	} else results.textContent("Invalid move. Please check and try again")
 }
 
 function game() {
@@ -54,6 +51,7 @@ function game() {
 const rockButton = document.getElementById('rockButton')
 const paperButton = document.getElementById('paperButton')
 const scissorsButton = document.getElementById('scissorsButton')
+const results = document.getElementById('results')
 
 rockButton.addEventListener('click', () => handleClick('ROCK'))
 paperButton.addEventListener('click', () => handleClick('PAPER'))
