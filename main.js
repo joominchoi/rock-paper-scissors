@@ -34,6 +34,7 @@ function playRound(playerSelection, computerSelection) {
 		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else roundResult.textContent("Invalid move. Please check and try again")
 
+	disableButtons()
 	declareWinner()
 }
 
@@ -42,6 +43,14 @@ function declareWinner() {
 		gameResult.textContent = "Player wins the game!"
 	} else if (computerScore === 5) {
 		gameResult.textContent = "Computer wins the game!"
+	}
+}
+
+function disableButtons() {
+	if ((playerScore >= 5) || (computerScore >= 5)) {
+		rockButton.disabled = true;
+		paperButton.disabled = true;
+		scissorsButton.disabled = true;
 	}
 }
 
