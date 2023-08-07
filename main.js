@@ -7,25 +7,26 @@ function getComputerChoice() {
 
 }
 
-function playRound(playerSelection, computerSelection) {
-	playerSelection = prompt("Rock, Paper or Scissors?");
-	playerSelectionUpperCase = playerSelection.toUpperCase()
-	computerSelection = getComputerChoice();
+computerSelection = getComputerChoice();
 
+function playRound(playerSelection, computerSelection) {
 	if (
-		(playerSelectionUpperCase === "ROCK" && computerSelection === "SCISSORS") ||
-		(playerSelectionUpperCase === "PAPER" && computerSelection === "ROCK") ||
-		(playerSelectionUpperCase === "SCISSORS" && computerSelection === "PAPER")
+		(playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
+		(playerSelection === "PAPER" && computerSelection === "ROCK") ||
+		(playerSelection === "SCISSORS" && computerSelection === "PAPER")
 	) {
-		return "P Wins"
+		// return "P Wins"
+		console.log("P Wins")
 	} else if (
-		(computerSelection === "ROCK" && playerSelectionUpperCase === "SCISSORS") ||
-		(computerSelection === "PAPER" && playerSelectionUpperCase === "ROCK") ||
-		(computerSelection === "SCISSORS" && playerSelectionUpperCase === "PAPER")
+		(computerSelection === "ROCK" && playerSelection === "SCISSORS") ||
+		(computerSelection === "PAPER" && playerSelection === "ROCK") ||
+		(computerSelection === "SCISSORS" && playerSelection === "PAPER")
 	) {
-		return "C Wins"
-	} else if (playerSelectionUpperCase === computerSelection) {
-		return "Draw"
+		// return "C Wins"
+		console.log("C Wins")
+	} else if (playerSelection === computerSelection) {
+		// return "Draw"
+		console.log("Draw")
 	} else console.log("Invalid move. Please check input.");
 }
 
@@ -50,24 +51,17 @@ function game() {
 	}
 }
 
-const container = document.querySelector('#container');
+const rockButton = document.getElementById('rockButton')
+const paperButton = document.getElementById('paperButton')
+const scissorsButton = document.getElementById('scissorsButton')
 
-const rockButton = document.createElement('button')
-rockButton.classList.add('rock');
-rockButton.textContent = 'Rock';
+rockButton.addEventListener('click', () => handleClick('ROCK'))
+paperButton.addEventListener('click', () => handleClick('PAPER'))
+scissorsButton.addEventListener('click', () => handleClick('SCISSORS'))
 
-container.appendChild(rockButton);
+function handleClick(playerSelection) {
+	const computerSelection = getComputerChoice()
+	playRound(playerSelection, computerSelection)
+  }
 
-const paperButton = document.createElement('button')
-paperButton.classList.add('paper');
-paperButton.textContent = 'Paper';
-
-container.appendChild(paperButton);
-
-const scissorsButton = document.createElement('button')
-scissorsButton.classList.add('scissors');
-scissorsButton.textContent = 'Scissors';
-
-container.appendChild(scissorsButton);
-
-game()
+// game()
