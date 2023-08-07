@@ -54,27 +54,6 @@ function disableButtons() {
 	}
 }
 
-// function game() {
-// 	let playerScore = 0
-// 	let computerScore = 0
-// 	let numberOfRounds = 5
-
-// 	while (numberOfRounds > 0) {
-// 		let currentRound = playRound()
-// 		if (currentRound === "P Wins") {
-// 			playerScore++
-// 			console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
-// 		} else if (currentRound === "C Wins") {
-// 			computerScore++
-// 			console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
-// 		} else if (currentRound === "Draw") {
-// 			console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
-// 		}
-
-// 		numberOfRounds -= 1
-// 	}
-// }
-
 const rockButton = document.getElementById('rockButton')
 const paperButton = document.getElementById('paperButton')
 const scissorsButton = document.getElementById('scissorsButton')
