@@ -50,4 +50,24 @@ function game() {
 	}
 }
 
+const container = document.querySelector('#container');
+
+const rockButton = document.createElement('button')
+rockButton.classList.add('rock');
+rockButton.textContent = 'Rock';
+
+container.appendChild(rockButton);
+
+const paperButton = document.createElement('button')
+paperButton.classList.add('paper');
+paperButton.textContent = 'Paper';
+
+container.appendChild(paperButton);
+
+const scissorsButton = document.createElement('button')
+scissorsButton.classList.add('scissors');
+scissorsButton.textContent = 'Scissors';
+
+container.appendChild(scissorsButton);
+
 game()
