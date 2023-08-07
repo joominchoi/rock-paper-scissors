@@ -9,49 +9,69 @@ function getComputerChoice() {
 
 computerSelection = getComputerChoice();
 
+let playerScore = 0
+let computerScore = 0
+
 function playRound(playerSelection, computerSelection) {
 	if (
 		(playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
 		(playerSelection === "PAPER" && computerSelection === "ROCK") ||
 		(playerSelection === "SCISSORS" && computerSelection === "PAPER")
 	) {
-		results.textContent = "Player Wins"
+		playerScore += 1
+		roundResult.textContent = "Player Wins"
+		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else if (
 		(computerSelection === "ROCK" && playerSelection === "SCISSORS") ||
 		(computerSelection === "PAPER" && playerSelection === "ROCK") ||
 		(computerSelection === "SCISSORS" && playerSelection === "PAPER")
 	) {
-		results.textContent = "Computer Wins"
+		computerScore += 1
+		roundResult.textContent = "Computer Wins"
+		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else if (playerSelection === computerSelection) {
-		results.textContent = "Draw"
-	} else results.textContent("Invalid move. Please check and try again")
+		roundResult.textContent = "Draw"
+		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
+	} else roundResult.textContent("Invalid move. Please check and try again")
+
+	declareWinner()
 }
 
-function game() {
-	let playerScore = 0
-	let computerScore = 0
-	let numberOfRounds = 5
-
-	while (numberOfRounds > 0) {
-		let currentRound = playRound()
-		if (currentRound === "P Wins") {
-			playerScore++
-			console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
-		} else if (currentRound === "C Wins") {
-			computerScore++
-			console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
-		} else if (currentRound === "Draw") {
-			console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
-		}
-
-		numberOfRounds -= 1
+function declareWinner() {
+	if (playerScore === 5) {
+		gameResult.textContent = "Player wins the game!"
+	} else if (computerScore === 5) {
+		gameResult.textContent = "Computer wins the game!"
 	}
 }
+
+// function game() {
+// 	let playerScore = 0
+// 	let computerScore = 0
+// 	let numberOfRounds = 5
+
+// 	while (numberOfRounds > 0) {
+// 		let currentRound = playRound()
+// 		if (currentRound === "P Wins") {
+// 			playerScore++
+// 			console.log("You Win! " + "Score is " + playerScore + ":" + computerScore);
+// 		} else if (currentRound === "C Wins") {
+// 			computerScore++
+// 			console.log("You Lose! " + "Score is " + playerScore + ":" + computerScore);
+// 		} else if (currentRound === "Draw") {
+// 			console.log("It's a Draw! " + "Score is still " + playerScore + ":" + computerScore);
+// 		}
+
+// 		numberOfRounds -= 1
+// 	}
+// }
 
 const rockButton = document.getElementById('rockButton')
 const paperButton = document.getElementById('paperButton')
 const scissorsButton = document.getElementById('scissorsButton')
-const results = document.getElementById('results')
+const roundResult = document.getElementById('roundResult')
+const score = document.getElementById('score')
+const gameResult = document.getElementById('gameResult')
 
 rockButton.addEventListener('click', () => handleClick('ROCK'))
 paperButton.addEventListener('click', () => handleClick('PAPER'))
@@ -60,6 +80,5 @@ scissorsButton.addEventListener('click', () => handleClick('SCISSORS'))
 function handleClick(playerSelection) {
 	const computerSelection = getComputerChoice()
 	playRound(playerSelection, computerSelection)
-  }
+}
 
-// game()
