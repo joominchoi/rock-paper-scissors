@@ -62,13 +62,13 @@ function disableButtons() {
 	}
 }
 
-const rockButton = document.getElementById('rockButton')
-const paperButton = document.getElementById('paperButton')
-const scissorsButton = document.getElementById('scissorsButton')
-const roundExplanation = document.getElementById('roundExplanation')
-const roundResult = document.getElementById('roundResult')
+const rockButton = document.getElementById('rock-button')
+const paperButton = document.getElementById('paper-button')
+const scissorsButton = document.getElementById('scissors-button')
+const roundExplanation = document.getElementById('round-explanation')
+const roundResult = document.getElementById('round-result')
 const score = document.getElementById('score')
-const gameResult = document.getElementById('gameResult')
+const gameResult = document.getElementById('game-result')
 
 rockButton.addEventListener('click', () => handleClick('ROCK'))
 paperButton.addEventListener('click', () => handleClick('PAPER'))
