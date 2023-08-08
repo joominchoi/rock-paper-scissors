@@ -19,7 +19,10 @@ function playRound(playerSelection, computerSelection) {
 		(playerSelection === "SCISSORS" && computerSelection === "PAPER")
 	) {
 		playerScore += 1
-		roundResult.textContent = "Player Wins"
+		roundExplanation.textContent = 
+		`You chose ${playerSelection} and the computer chose ${computerSelection}.
+		${playerSelection} beats ${computerSelection}. You win this round!`
+		roundResult.textContent = "Player wins this round!"
 		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else if (
 		(computerSelection === "ROCK" && playerSelection === "SCISSORS") ||
@@ -27,10 +30,15 @@ function playRound(playerSelection, computerSelection) {
 		(computerSelection === "SCISSORS" && playerSelection === "PAPER")
 	) {
 		computerScore += 1
-		roundResult.textContent = "Computer Wins"
+		roundExplanation.textContent = 
+		`You chose ${playerSelection} and the computer chose ${computerSelection}.
+		${computerSelection} beats ${playerSelection}. Computer wins this round!`
+		roundResult.textContent = "Computer wins this round!"
 		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else if (playerSelection === computerSelection) {
-		roundResult.textContent = "Draw"
+		roundExplanation.textContent = 
+		`You and the computer both chose ${playerSelection}. This round is a draw!`
+		roundResult.textContent = "This round is a draw!"
 		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else roundResult.textContent("Invalid move. Please check and try again")
 
@@ -57,6 +65,7 @@ function disableButtons() {
 const rockButton = document.getElementById('rockButton')
 const paperButton = document.getElementById('paperButton')
 const scissorsButton = document.getElementById('scissorsButton')
+const roundExplanation = document.getElementById('roundExplanation')
 const roundResult = document.getElementById('roundResult')
 const score = document.getElementById('score')
 const gameResult = document.getElementById('gameResult')
@@ -70,6 +79,7 @@ function handleClick(playerSelection) {
 	playRound(playerSelection, computerSelection)
 }
 
-roundResult.textContent = `Round results will display here.`
+roundExplanation.textContent = `Round explanation will be displayed here`
+roundResult.textContent = `Round results will be displayed here.`
 score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 gameResult.textContent = `Game hasn't finished yet!`
