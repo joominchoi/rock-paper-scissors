@@ -65,6 +65,7 @@ function disableButtons() {
 const rockButton = document.getElementById('rock-button')
 const paperButton = document.getElementById('paper-button')
 const scissorsButton = document.getElementById('scissors-button')
+const newGameButton = document.getElementById('new-game-button')
 const roundExplanation = document.getElementById('round-explanation')
 const roundResult = document.getElementById('round-result')
 const score = document.getElementById('score')
@@ -73,6 +74,7 @@ const gameResult = document.getElementById('game-result')
 rockButton.addEventListener('click', () => handleClick('ROCK'))
 paperButton.addEventListener('click', () => handleClick('PAPER'))
 scissorsButton.addEventListener('click', () => handleClick('SCISSORS'))
+newGameButton.addEventListener('click', () => location.reload())
 
 function handleClick(playerSelection) {
 	const computerSelection = getComputerChoice()
