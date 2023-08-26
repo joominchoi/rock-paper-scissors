@@ -84,4 +84,4 @@ function handleClick(playerSelection) {
 roundExplanation.textContent = `Round explanation will be displayed here`
 roundResult.textContent = `Round results will be displayed here.`
 score.textContent = `Player ${playerScore} : ${computerScore} Computer`
-gameResult.textContent = `Game hasn't finished yet!`
+gameResult.textContent = `Winner has yet to be decided!`
