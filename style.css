@@ -8,6 +8,11 @@
     font-size: 50px;
 }
 
+.rules-image {
+    height: 250px;
+    width: 250px;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
