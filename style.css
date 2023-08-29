@@ -8,6 +8,10 @@
     font-size: 50px;
 }
 
+.header-subtext {
+    text-align: center;
+}
+
 .rules-image {
     height: 250px;
     width: 250px;
