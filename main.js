@@ -74,11 +74,18 @@ const gameResult = document.getElementById('game-result')
 rockButton.addEventListener('click', () => handleClick('ROCK'))
 paperButton.addEventListener('click', () => handleClick('PAPER'))
 scissorsButton.addEventListener('click', () => handleClick('SCISSORS'))
-newGameButton.addEventListener('click', () => location.reload())
+newGameButton.addEventListener('click', () => newGame())
 
 function handleClick(playerSelection) {
 	const computerSelection = getComputerChoice()
 	playRound(playerSelection, computerSelection)
+}
+
+function newGame() {
+  let text = "Are you sure you want to start a new game?";
+  if (confirm(text) == true) {
+    location.reload()
+  }
 }
 
 roundExplanation.textContent = `Round explanation will be displayed here`
