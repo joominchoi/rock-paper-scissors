@@ -1,3 +1,9 @@
+@import url(https://fonts.cdnfonts.com/css/handwriting);
+
+body {
+  font-family: 'Handwriting', Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .header {
   display: flex;
   flex-direction: column;
