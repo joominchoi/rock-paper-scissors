@@ -8,13 +8,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.header-title {
   font-size: 50px;
 }
 
-.header-subtext {
+.subtext {
   text-align: center;
 }
 
