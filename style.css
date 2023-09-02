@@ -11,13 +11,13 @@ body {
   font-size: 50px;
 }
 
-.subtext {
-  text-align: center;
-}
-
 .rules-image {
   height: 250px;
   width: 250px;
+}
+
+.subtext {
+  text-align: center;
 }
 
 .moves {
@@ -33,7 +33,18 @@ img {
 
 .move-buttons {
   cursor: pointer;
-  /* border: none; */
+  margin: 0;
+  padding: 0;
+  border-width: 2px;
+  border-radius: 5px;
+  appearance: none;
+  background-color: inherit;
+}
+
+#new-game-button {
+  cursor: pointer;
+  font-family: 'Handwriting', Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
   margin: 0;
   padding: 0;
   border-radius: 5px;
@@ -41,12 +52,12 @@ img {
   background-color: inherit;
 }
 
-.move-buttons:hover {
+.move-buttons:hover, #new-game-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.move-buttons:active {
+.move-buttons:active, #new-game-button:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }

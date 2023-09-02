@@ -21,7 +21,7 @@ function playRound(playerSelection, computerSelection) {
 		playerScore += 1
 		roundExplanation.textContent = 
 		`You chose ${playerSelection} and the computer chose ${computerSelection}.
-		${playerSelection} beats ${computerSelection}. You win this round!`
+		${playerSelection} beats ${computerSelection}.`
 		roundResult.textContent = "Player wins this round!"
 		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else if (
@@ -32,12 +32,12 @@ function playRound(playerSelection, computerSelection) {
 		computerScore += 1
 		roundExplanation.textContent = 
 		`You chose ${playerSelection} and the computer chose ${computerSelection}.
-		${computerSelection} beats ${playerSelection}. Computer wins this round!`
+		${computerSelection} beats ${playerSelection}.`
 		roundResult.textContent = "Computer wins this round!"
 		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else if (playerSelection === computerSelection) {
 		roundExplanation.textContent = 
-		`You and the computer both chose ${playerSelection}. This round is a draw!`
+		`You and the computer both chose ${playerSelection}.`
 		roundResult.textContent = "This round is a draw!"
 		score.textContent = `Player ${playerScore} : ${computerScore} Computer`
 	} else roundResult.textContent("Invalid move. Please check and try again")
