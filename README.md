@@ -2,7 +2,7 @@
 
 #### Building a Rock Paper Scissors game
 
-[Click here to check out the game](https://jooomin.github.io/rock-paper-scissors/)
+[Click here to check out the game](https://joominchoi.github.io/rock-paper-scissors/)
 
 Course reference pages: \
 [Project: Rock Paper Scissors](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors) \
